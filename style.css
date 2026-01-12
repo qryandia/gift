@@ -1,6 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0 12px; 
+    height: 100%;
+}
 body {
                 margin: 0;
-                padding: 0 30px;
+                padding: 0 20px;
                 background: #0d0d0d;
                 color: #e0e0e0;
                 font-family: Consolas, monospace;
