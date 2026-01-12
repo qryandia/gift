@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Level 22</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="box">
+            <div class="level" id="level">SYSTEM READY</div>
+            <div class="message" id="message">
+                Press START to initialize Level 22.
+            </div>
+            <img id="levelImage" src="" alt="memory" style="display:none; width:100%; margin-bottom:20px;">
+            <video id="levelVideo"
+                width="220"
+                style="display:none; margin:16px auto 20px;"
+                controls
+                loop>
+                <source src="video/peluk.mp4" type="video/mp4">
+                Browser does not support video.
+            </video>
+
+            <div class="loader" id="loader"></div>
+            <button id="startBtn" onclick="next()">START</button>
+            <button id="finalBtn" onclick="goFinal()" style="display:none;">
+                CONTINUE
+            </button>
+        </div>
+
+
+        <script>
+        const logs = [
+            "Haloo babe.. hehe happy birthday! (⁠｡⁠•̀⁠ᴗ⁠-⁠)⁠✧ 🩷",
+            "Aku bingung bangett maw ngucapinnya kaya gimana hshshshs",
+            "Buttt I thought about making something like this... andddd I think it’s really cute!! ♡(⁠ ⁠╹⁠▽⁠╹⁠ ⁠)",
+            "Semogaa ini bisa berkesan baik buat kamuu yawww xixixi 😋",
+            "First of all, I just want to say thank you for still being here",
+            "Dan kamu sudah berusaha sekeras ini sampai umur kamu yang sudaa 22 tahunnn, yeyyyy!!",
+            "Aku taw kamu banyak berusaha sangat-sangatt kerass untuk sampai diumur yang sekaranggg",
+            "KAMU SANGAT SANGAT KEREN SEKALIIII, kalau aku nulis kata keren sebox juga belum bisa memenuhi gambaran seberapa keren kamu, wahahhahaha",
+            "Soalnya dari banyaa cerita kamu yang udah kamu bagi ke akuu, itu bikin aku ikutan ngerasa kayaa wahh banget kalo misall aku jadi kamu hehehe... serius deh ga boong bwanggg, Kamu pasti sangat bangga dengan diri kamu sendiri!!",
+            "Kamu itu pekerja keras, percaya diri, dan selalu menemukan solusi untuk semua masalahmuuu, kamu juga baik bangett sama temen-temenmu dan akuuu, makasii banyaa yaa sayangggggg...",
+            "I wish u always happy🩷, dan kamu dijauhkan dari semua hal-hal burukk. Kalaupun hal buruk itu datang, aku tau kamu bisa menyelesaikann semuanya dengan baikkkk!! Dan kamu ga perlu takutt buat sendiriann yaaa, karena aku ada disini sama kamuu, teman-temanmu jugaaa",
+            "If u feel lonely, i'll come and give u a hug",
+            "And we’ll sit there for a moment, until everything feels okay again..",
+            "Pokonyaa walaupun badai menghantam nantiii aku berharap banyaa kemudahan yang membantumu untuk bangkit, dan kamu tidaa mudah menyerahhhhh.",
+            "Soalnyaa, kalau kamu nyerahh...",
+            "xixixixiiii",
+            "Hapii bisdeyy yaww, aku sayang kmuuu",
+            "Sudah tuwaa, sudah saatnya",
+            "Sudah saatnya memulai hidup yang lebih baik dan matangg seperti wahyu a5 yng di panggang dengan api sedang hingga medium rare",
+            "awokawok, apalaa",
+            "love u so baddd",
+            "terakhirr klikk deeeehh!!"
+        ];
+
+        let i = -1;
+
+        function next() {
+            if (i === -1) {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("startBtn").innerText = "CONFIRM";
+            }
+
+            i++;
+
+            const img = document.getElementById("levelImage");
+            img.style.display = "none";
+            const video = document.getElementById("levelVideo");
+            video.style.display = "none";
+            video.pause();
+            video.currentTime = 0;
+
+            if (i < logs.length) {
+
+
+                if (i === 11) {
+                    document.getElementById("level").innerText = "LEVEL 12 / 22";
+                    document.getElementById("message").innerText = logs[i];
+
+                    img.style.display = "none";
+
+                    video.style.display = "block";
+                    video.play(); 
+                }
+
+                if (i === 14) {
+                    document.getElementById("level").innerText = "LEVEL 15 / 22";
+                    document.getElementById("message").innerText = logs[i];
+                    img.src = "img/dua.jpg";
+                    img.style.display = "block";
+                } else {
+                    document.getElementById("level").innerText = `LEVEL ${i+1} / 22`;
+                    document.getElementById("message").innerText = logs[i];
+                }
+
+
+            } else {
+                document.getElementById("level").innerText = "SYSTEM COMPLETE";
+                document.getElementById("message").innerText =
+                    "22 levels cleared.\n\nHappy 22nd Birthday🎂.";
+
+                document.getElementById("startBtn").style.display = "none";
+                document.getElementById("finalBtn").style.display = "inline-block";
+            }
+        }
+
+
+        function goFinal() {
+            window.location.href = "lilin.html";
+        }
+        </script>
+
+
+    </body>
+</html>
