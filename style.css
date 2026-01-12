@@ -1,12 +1,14 @@
 body {
                 margin: 0;
+                padding: 0 30px;
                 background: #0d0d0d;
                 color: #e0e0e0;
                 font-family: Consolas, monospace;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 100vh;
+                min-height: 100vh;
+                box-sizing: border-box;
             }
             .box {
                 width: 90%;
